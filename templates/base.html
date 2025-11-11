@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Forex Academy & Signals{% endblock %}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#005073',
+                        accent: '#ffcd05',
+                        secondary: '#ffffff',
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .animate-gradient { background: linear-gradient(-45deg, #005073, #ffcd05, #005073, #ffcd05); background-size: 400% 400%; animation: gradient 15s ease infinite; }
+        @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+    </style>
+</head>
+<body class="bg-primary text-white min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-primary shadow-lg sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="{% url 'homepage' %}" class="text-accent font-bold text-xl">Forex Academy & Signals</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="{% url 'homepage' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="{% url 'pricing' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                    <a href="{% url 'signals_purchase' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Signals</a>
+                    <a href="{% url 'classes_enroll' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Classes</a>
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'dashboard' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="{% url 'logout' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+                    {% else %}
+                        <a href="{% url 'login' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                        <a href="{% url 'signup' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                    {% endif %}
+                    <button id="theme-toggle" class="text-white hover:text-accent p-2 rounded-md">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-primary border-t border-gray-700 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div>
+                    <h3 class="text-accent font-semibold mb-4">Elite Forex</h3>
+                    <p class="text-gray-300 text-sm">Professional forex signals and trading education platform.</p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="{% url 'homepage' %}" class="text-gray-300 hover:text-accent">Home</a></li>
+                        <li><a href="{% url 'pricing' %}" class="text-gray-300 hover:text-accent">Pricing</a></li>
+                        <li><a href="{% url 'signals_purchase' %}" class="text-gray-300 hover:text-accent">Signals</a></li>
+                        <li><a href="{% url 'classes_enroll' %}" class="text-gray-300 hover:text-accent">Classes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-300 hover:text-accent"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-accent"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p class="text-gray-400 text-xs">
+                    <strong>Risk Disclaimer:</strong> Forex trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Please trade responsibly.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/theme.js' %}"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

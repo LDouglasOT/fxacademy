@@ -1,0 +1,896 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-primary overflow-hidden py-20">
+    <div class="absolute inset-0 animate-gradient opacity-10"></div>
+    
+    <!-- Animated Background Elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-10 left-10 w-40 h-40 bg-accent rounded-full opacity-5 animate-pulse"></div>
+        <div class="absolute top-32 right-20 w-56 h-56 bg-accent rounded-full opacity-5 animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/3 w-48 h-48 bg-accent rounded-full opacity-5 animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <div class="inline-block mb-6">
+            <span class="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold border border-accent/30">
+                🎓 Professional Trading Education
+            </span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+            Trading Academy
+            <span class="text-accent block mt-2">Enrollment</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
+            Master the art of forex trading with our comprehensive education program designed for traders at every level
+        </p>
+        
+        <!-- Quick Stats -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-12 max-w-3xl mx-auto">
+            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                <div class="text-3xl font-bold text-accent">500+</div>
+                <div class="text-sm text-gray-300">Students</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                <div class="text-3xl font-bold text-accent">50+</div>
+                <div class="text-sm text-gray-300">Video Lessons</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                <div class="text-3xl font-bold text-accent">Live</div>
+                <div class="text-sm text-gray-300">Sessions</div>
+            </div>
+            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-4 border border-white/10">
+                <div class="text-3xl font-bold text-accent">100%</div>
+                <div class="text-sm text-gray-300">Support</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Wave Divider -->
+    <svg class="absolute bottom-0 left-0 w-full h-24" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z" fill="#111827" opacity="1">
+            <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                values="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z;
+                        M0,120 C400,100 700,80 1000,100 L1200,120 L0,120 Z;
+                        M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z" />
+        </path>
+    </svg>
+</section>
+
+<!-- What You'll Learn Section -->
+<section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Curriculum</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                What You'll <span class="text-accent">Learn</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                Comprehensive training covering all aspects of successful forex trading
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            <!-- Module 1 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-line text-primary text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-3">Technical Analysis</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Master chart patterns, indicators, and price action analysis to identify profitable trading opportunities.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Candlestick patterns</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Support & resistance levels</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Trend analysis strategies</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Technical indicators mastery</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-shield-alt text-primary text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-3">Risk Management</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Learn proper position sizing, stop losses, and risk-reward ratios to protect your capital.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Position sizing formulas</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Stop-loss placement</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Risk-reward optimization</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Portfolio management</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-brain text-primary text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-3">Market Psychology</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Understand trader psychology and develop emotional discipline for consistent trading success.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Emotional control techniques</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Trading psychology fundamentals</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Discipline development</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Avoiding common pitfalls</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="flex items-start">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-cogs text-primary text-2xl"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="text-xl font-bold text-white mb-3">Trading Strategies</h3>
+                        <p class="text-gray-300 mb-4 leading-relaxed">
+                            Develop and implement proven trading methodologies tailored to your trading style.
+                        </p>
+                        <ul class="space-y-2 text-sm text-gray-400">
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Scalping strategies</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Day trading techniques</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Swing trading methods</li>
+                            <li class="flex items-center"><i class="fas fa-check-circle text-accent mr-2"></i> Long-term positioning</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Academy Benefits Section -->
+<section class="py-20 bg-gradient-to-b from-primary to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: radial-gradient(circle, #ffcd05 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+    
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Premium Access</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Academy <span class="text-accent">Benefits</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                Everything you need to become a successful forex trader
+            </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-gray-800/70 to-gray-900/50 backdrop-blur-sm p-10 rounded-3xl border border-white/10 shadow-2xl">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-video text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Live Interactive Sessions</h4>
+                        <p class="text-gray-400 text-sm">Real-time learning with expert instructors and Q&A opportunities</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-clock text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">24/7 Course Access</h4>
+                        <p class="text-gray-400 text-sm">Learn at your own pace with unlimited access to all materials</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-users text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Community Forum Access</h4>
+                        <p class="text-gray-400 text-sm">Connect with fellow traders and share insights</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-certificate text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Certificate of Completion</h4>
+                        <p class="text-gray-400 text-sm">Official certification to showcase your expertise</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-tie text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Personal Mentorship</h4>
+                        <p class="text-gray-400 text-sm">One-on-one guidance from experienced trading professionals</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-book text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Trading Resources</h4>
+                        <p class="text-gray-400 text-sm">Exclusive eBooks, templates, and trading tools</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-headset text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Priority Support</h4>
+                        <p class="text-gray-400 text-sm">Fast response times for all your questions and concerns</p>
+                    </div>
+                </div>
+
+                <div class="flex items-start p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-all duration-300 group">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-lg flex items-center justify-center mr-4 flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-chart-bar text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold mb-1">Progress Tracking</h4>
+                        <p class="text-gray-400 text-sm">Monitor your learning journey with detailed analytics</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Learning Path Timeline -->
+<section class="py-20 bg-gray-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Your Journey</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Learning <span class="text-accent">Path</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                From beginner to expert in structured, easy-to-follow steps
+            </p>
+        </div>
+
+        <div class="relative">
+            <!-- Timeline Line -->
+            <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-accent via-yellow-600 to-accent transform -translate-x-1/2"></div>
+
+            <!-- Timeline Items -->
+            <div class="space-y-12">
+                <!-- Step 1 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-5/12 md:text-right md:pr-12 mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold text-white mb-2">Beginner Level</h3>
+                        <p class="text-gray-300">Foundation of forex trading, market basics, and platform navigation</p>
+                    </div>
+                    <div class="relative flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-accent/50 z-10">
+                            <span class="text-primary text-2xl font-bold">1</span>
+                        </div>
+                    </div>
+                    <div class="md:w-5/12 md:pl-12"></div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-5/12 md:pr-12"></div>
+                    <div class="relative flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-accent/50 z-10">
+                            <span class="text-primary text-2xl font-bold">2</span>
+                        </div>
+                    </div>
+                    <div class="md:w-5/12 md:pl-12 md:text-left mt-4 md:mt-0">
+                        <h3 class="text-2xl font-bold text-white mb-2">Intermediate Level</h3>
+                        <p class="text-gray-300">Advanced technical analysis, strategy development, and risk management</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-5/12 md:text-right md:pr-12 mb-4 md:mb-0">
+                        <h3 class="text-2xl font-bold text-white mb-2">Advanced Level</h3>
+                        <p class="text-gray-300">Complex strategies, market psychology, and professional trading techniques</p>
+                    </div>
+                    <div class="relative flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-accent/50 z-10">
+                            <span class="text-primary text-2xl font-bold">3</span>
+                        </div>
+                    </div>
+                    <div class="md:w-5/12 md:pl-12"></div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="relative flex flex-col md:flex-row items-center">
+                    <div class="md:w-5/12 md:pr-12"></div>
+                    <div class="relative flex-shrink-0">
+                        <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center shadow-2xl shadow-accent/50 z-10">
+                            <i class="fas fa-trophy text-primary text-2xl"></i>
+                        </div>
+                    </div>
+                    <div class="md:w-5/12 md:pl-12 md:text-left mt-4 md:mt-0">
+                        <h3 class="text-2xl font-bold text-white mb-2">Master Trader</h3>
+                        <p class="text-gray-300">Portfolio management, mentorship opportunities, and consistent profitability</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Join Community CTA -->
+<section class="py-20 bg-gradient-to-b from-primary to-gray-900 relative overflow-hidden">
+    <div class="absolute inset-0 animate-gradient opacity-10"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="inline-block mb-6">
+            <span class="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold border border-accent/30">
+                🚀 Join 500+ Active Students
+            </span>
+        </div>
+        
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Start Your
+            <span class="text-accent block mt-2">Trading Journey?</span>
+        </h2>
+        
+        <p class="text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+            Join our vibrant trading community and accelerate your learning with support from experienced traders and fellow students!
+        </p>
+
+        <!-- Community Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12 max-w-3xl mx-auto">
+            <!-- Telegram Card -->
+            <div class="bg-gradient-to-br from-blue-600/20 to-blue-800/20 backdrop-blur-sm p-8 rounded-2xl border border-blue-500/30 hover:border-blue-500/60 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-500/20">
+                <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fab fa-telegram text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Telegram Community</h3>
+                <p class="text-gray-300 mb-6 text-sm">
+                    Get instant updates, share insights, and connect with traders worldwide
+                </p>
+                <ul class="text-left space-y-2 text-sm text-gray-300 mb-6">
+                    <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i> Daily market analysis</li>
+                    <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i> Live trading discussions</li>
+                    <li class="flex items-center"><i class="fas fa-check text-blue-400 mr-2"></i> Quick support responses</li>
+                </ul>
+                <a href="https://t.me/yourmockgrouplink" target="_blank" class="group inline-flex items-center justify-center w-full bg-blue-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-telegram mr-2 text-xl"></i>
+                    Join Telegram Group
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+
+            <!-- WhatsApp Card -->
+            <div class="bg-gradient-to-br from-green-600/20 to-green-800/20 backdrop-blur-sm p-8 rounded-2xl border border-green-500/30 hover:border-green-500/60 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-green-500/20">
+                <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="fab fa-whatsapp text-white text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">WhatsApp Community</h3>
+                <p class="text-gray-300 mb-6 text-sm">
+                    Direct communication channel for personalized support and guidance
+                </p>
+                <ul class="text-left space-y-2 text-sm text-gray-300 mb-6">
+                    <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Personal mentorship</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Trading signal alerts</li>
+                    <li class="flex items-center"><i class="fas fa-check text-green-400 mr-2"></i> Exclusive resources</li>
+                </ul>
+                <a href="https://wa.me/yourmocknumber" target="_blank" class="group inline-flex items-center justify-center w-full bg-green-600 text-white px-6 py-4 rounded-xl font-semibold hover:bg-green-700 transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i>
+                    Join WhatsApp Group
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+        </div>
+
+        <p class="text-gray-400 text-sm flex items-center justify-center">
+            <i class="fas fa-lock text-accent mr-2"></i>
+            Secure & private communities • Click the buttons above to join instantly
+        </p>
+
+        <!-- Trust Indicators -->
+        <div class="mt-16 pt-12 border-t border-white/10">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-70">
+                <div class="text-center">
+                    <i class="fas fa-users text-accent text-3xl mb-2"></i>
+                    <p class="text-xs text-gray-400">Active Community</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-comments text-accent text-3xl mb-2"></i>
+                    <p class="text-xs text-gray-400">24/7 Discussion</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-graduation-cap text-accent text-3xl mb-2"></i>
+                    <p class="text-xs text-gray-400">Expert Guidance</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-heart text-accent text-3xl mb-2"></i>
+                    <p class="text-xs text-gray-400">Supportive Network</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-20 bg-gray-900">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Have Questions?</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Frequently Asked <span class="text-accent">Questions</span>
+            </h2>
+            <p class="text-gray-300 text-lg">
+                Everything you need to know about our trading academy
+            </p>
+        </div>
+
+        <div class="space-y-4">
+            <!-- FAQ Item 1 -->
+            <div class="bg-primary/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+                <button class="w-full px-6 py-5 text-left flex items-center justify-between">
+                    <span class="text-white font-semibold text-lg">What is the duration of the course?</span>
+                    <i class="fas fa-chevron-down text-accent group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="px-6 pb-5 text-gray-300">
+                    The comprehensive course spans 8-12 weeks depending on your pace. You have lifetime access to all materials, so you can learn at your own speed and revisit lessons anytime.
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-primary/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+                <button class="w-full px-6 py-5 text-left flex items-center justify-between">
+                    <span class="text-white font-semibold text-lg">Do I need prior trading experience?</span>
+                    <i class="fas fa-chevron-down text-accent group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="px-6 pb-5 text-gray-300">
+                    No prior experience is required! Our curriculum is designed for complete beginners and progressively builds to advanced levels. We start with the fundamentals and guide you every step of the way.
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-primary/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+                <button class="w-full px-6 py-5 text-left flex items-center justify-between">
+                    <span class="text-white font-semibold text-lg">What support is available during the course?</span>
+                    <i class="fas fa-chevron-down text-accent group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="px-6 pb-5 text-gray-300">
+                    You'll have access to our community forums, weekly live Q&A sessions, priority email support, and optional one-on-one mentorship. Our instructors are committed to your success!
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-primary/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+                <button class="w-full px-6 py-5 text-left flex items-center justify-between">
+                    <span class="text-white font-semibold text-lg">Will I receive a certificate?</span>
+                    <i class="fas fa-chevron-down text-accent group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="px-6 pb-5 text-gray-300">
+                    Yes! Upon completing all modules and passing the final assessment, you'll receive an official Certificate of Completion that demonstrates your trading knowledge and expertise.
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-primary/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+                <button class="w-full px-6 py-5 text-left flex items-center justify-between">
+                    <span class="text-white font-semibold text-lg">How much capital do I need to start?</span>
+                    <i class="fas fa-chevron-down text-accent group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="px-6 pb-5 text-gray-300">
+                    We recommend starting with a practice account (demo) which requires no real money. When you're ready for live trading, you can start with as little as $100-$500, though we teach proper risk management for any account size.
+                </div>
+            </div>
+
+            <!-- FAQ Item 6 -->
+            <div class="bg-primary/50 backdrop-blur-sm rounded-xl border border-white/10 hover:border-accent/30 transition-all duration-300 overflow-hidden group">
+                <button class="w-full px-6 py-5 text-left flex items-center justify-between">
+                    <span class="text-white font-semibold text-lg">Is there a refund policy?</span>
+                    <i class="fas fa-chevron-down text-accent group-hover:rotate-180 transition-transform duration-300"></i>
+                </button>
+                <div class="px-6 pb-5 text-gray-300">
+                    Yes! We offer a 30-day money-back guarantee. If you're not satisfied with the course content within the first 30 days, we'll provide a full refund, no questions asked.
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Student Success Stories -->
+<section class="py-20 bg-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffcd05\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Real Results</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Student <span class="text-accent">Success Stories</span>
+            </h2>
+            <p class="text-gray-300 text-lg">
+                See how our students transformed their trading careers
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Success Story 1 -->
+            <div class="bg-gradient-to-b from-gray-800/70 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-user text-primary"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">Sarah M.</h4>
+                        <p class="text-gray-400 text-xs">Beginner to Consistent Trader</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed italic mb-4">
+                    "Started with zero knowledge and now I'm making consistent profits. The community support is incredible!"
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-accent font-bold text-sm">3 Months Progress</span>
+                    <span class="text-green-400 text-sm">+45% ROI</span>
+                </div>
+            </div>
+
+            <!-- Success Story 2 -->
+            <div class="bg-gradient-to-b from-gray-800/70 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-user text-primary"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">James T.</h4>
+                        <p class="text-gray-400 text-xs">Full-Time Trader</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed italic mb-4">
+                    "The risk management module alone was worth the investment. Now I trade with confidence!"
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-accent font-bold text-sm">6 Months Progress</span>
+                    <span class="text-green-400 text-sm">+120% ROI</span>
+                </div>
+            </div>
+
+            <!-- Success Story 3 -->
+            <div class="bg-gradient-to-b from-gray-800/70 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mr-3">
+                        <i class="fas fa-user text-primary"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">Maria G.</h4>
+                        <p class="text-gray-400 text-xs">Part-Time Trader</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                </div>
+                <p class="text-gray-300 text-sm leading-relaxed italic mb-4">
+                    "Balancing my job and learning was easy with lifetime access. Best decision I ever made!"
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-white/10">
+                    <span class="text-accent font-bold text-sm">4 Months Progress</span>
+                    <span class="text-green-400 text-sm">+65% ROI</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA Section -->
+<section class="py-24 bg-gradient-to-r from-primary via-gray-900 to-primary relative overflow-hidden">
+    <div class="absolute inset-0 animate-gradient opacity-20"></div>
+    
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <div class="inline-block mb-6">
+            <span class="bg-accent/20 text-accent px-6 py-3 rounded-full text-sm font-semibold border border-accent/30">
+                ⏰ Limited Time Offer
+            </span>
+        </div>
+        
+        <h2 class="text-4xl md:text-6xl font-bold text-white mb-6">
+            Don't Wait to
+            <span class="text-accent block mt-2">Transform Your Future</span>
+        </h2>
+        
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+            Every day you wait is a day of potential profits lost. Join our academy now and start your journey to financial independence through forex trading mastery.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-6 justify-center mb-10">
+            <a href="https://t.me/yourmockgrouplink" target="_blank" class="group bg-blue-600 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-blue-600/50 flex items-center justify-center">
+                <i class="fab fa-telegram mr-3 text-2xl"></i>
+                Join via Telegram
+                <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+            <a href="https://wa.me/yourmocknumber" target="_blank" class="group bg-green-600 text-white px-10 py-5 rounded-xl font-bold text-lg hover:bg-green-700 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-green-600/50 flex items-center justify-center">
+                <i class="fab fa-whatsapp mr-3 text-2xl"></i>
+                Join via WhatsApp
+                <i class="fas fa-arrow-right ml-3 group-hover:translate-x-1 transition-transform"></i>
+            </a>
+        </div>
+
+        <div class="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 max-w-2xl mx-auto">
+            <h3 class="text-accent font-bold text-xl mb-4">What You Get Today:</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                    <span>Full course access</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                    <span>Live mentorship</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                    <span>Community membership</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                    <span>Trading resources</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                    <span>Certificate program</span>
+                </div>
+                <div class="flex items-center text-gray-300">
+                    <i class="fas fa-check-circle text-accent mr-3"></i>
+                    <span>Lifetime updates</span>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-sm text-gray-400 mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <span class="flex items-center">
+                <i class="fas fa-shield-alt text-accent mr-2"></i>
+                30-Day Money-Back Guarantee
+            </span>
+            <span class="hidden sm:inline">•</span>
+            <span class="flex items-center">
+                <i class="fas fa-infinity text-accent mr-2"></i>
+                Lifetime Access
+            </span>
+            <span class="hidden sm:inline">•</span>
+            <span class="flex items-center">
+                <i class="fas fa-lock text-accent mr-2"></i>
+                Secure Payment
+            </span>
+        </p>
+    </div>
+</section>
+
+<style>
+/* Smooth animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #005073;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffcd05;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+/* Hover effects for cards */
+.group:hover .fa-check-circle {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(255, 205, 5, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 40px rgba(255, 205, 5, 0.5);
+    }
+}
+
+.shadow-accent\/50:hover {
+    animation: pulse-glow 2s infinite;
+}
+</style>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Intersection Observer for scroll animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach((section, index) => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = `opacity 0.8s ease-out ${index * 0.1}s, transform 0.8s ease-out ${index * 0.1}s`;
+        observer.observe(section);
+    });
+
+    // FAQ Accordion functionality
+    const faqButtons = document.querySelectorAll('.bg-primary\\/50 button');
+    faqButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector('.fa-chevron-down');
+            
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.opacity = '0';
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other FAQs
+                faqButtons.forEach(otherButton => {
+                    if (otherButton !== button) {
+                        const otherContent = otherButton.nextElementSibling;
+                        const otherIcon = otherButton.querySelector('.fa-chevron-down');
+                        otherContent.style.maxHeight = null;
+                        otherContent.style.opacity = '0';
+                        otherIcon.style.transform = 'rotate(0deg)';
+                    }
+                });
+                
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.opacity = '1';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        });
+        
+        // Hide content by default
+        const content = button.nextElementSibling;
+        content.style.maxHeight = '0';
+        content.style.opacity = '0';
+        content.style.overflow = 'hidden';
+        content.style.transition = 'max-height 0.3s ease, opacity 0.3s ease';
+    });
+
+    // Animate stats on scroll
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                entry.target.querySelectorAll('[data-count]').forEach(counter => {
+                    const target = parseInt(counter.dataset.count);
+                    animateCounter(counter, target);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.grid.grid-cols-2.md\\:grid-cols-4');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    function animateCounter(element, target, duration = 2000) {
+        let current = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString();
+        }, 16);
+    }
+
+    // Parallax effect
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.animate-gradient');
+        parallaxElements.forEach(element => {
+            element.style.transform = `translateY(${scrolled * 0.3}px)`;
+        });
+    });
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

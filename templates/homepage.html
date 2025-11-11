@@ -1,0 +1,605 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="relative bg-primary overflow-hidden min-h-screen flex items-center">
+    <div class="absolute inset-0 animate-gradient opacity-10"></div>
+    
+    <!-- Animated floating elements -->
+    <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-32 h-32 bg-accent rounded-full opacity-5 animate-pulse"></div>
+        <div class="absolute top-40 right-20 w-48 h-48 bg-accent rounded-full opacity-5 animate-pulse" style="animation-delay: 1s;"></div>
+        <div class="absolute bottom-20 left-1/4 w-40 h-40 bg-accent rounded-full opacity-5 animate-pulse" style="animation-delay: 2s;"></div>
+    </div>
+    
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 z-10">
+        <div class="text-center">
+            <div class="opacity-0 animate-fadeInUp" style="animation-delay: 0.2s;">
+                <div class="inline-block mb-4">
+                    <span class="bg-accent/20 text-accent px-4 py-2 rounded-full text-sm font-semibold border border-accent/30">
+                        🎯 Trusted by 10,000+ Traders Worldwide
+                    </span>
+                </div>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 opacity-0 animate-fadeInUp" style="animation-delay: 0.4s;">
+                Trade Smarter,<br>
+                <span class="text-accent relative inline-block">
+                    Not Harder
+                    <svg class="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
+                        <path d="M2 10C50 5 100 5 198 10" stroke="#ffcd05" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </span>
+            </h1>
+            
+            <p class="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto opacity-0 animate-fadeInUp" style="animation-delay: 0.6s;">
+                Professional forex signals and comprehensive trading education to elevate your trading journey to unprecedented heights.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center opacity-0 animate-fadeInUp" style="animation-delay: 0.8s;">
+                <a href="{% url 'pricing' %}" class="group bg-accent text-primary px-8 py-4 rounded-lg font-semibold hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-accent/50">
+                    Get Started
+                    <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform inline-block"></i>
+                </a>
+                <a href="{% url 'classes_enroll' %}" class="group border-2 border-accent text-accent px-8 py-4 rounded-lg font-semibold hover:bg-accent hover:text-primary transition-all duration-300 transform hover:scale-105">
+                    Learn More
+                    <i class="fas fa-graduation-cap ml-2"></i>
+                </a>
+            </div>
+            
+            <!-- Stats Counter -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 max-w-4xl mx-auto opacity-0 animate-fadeInUp" style="animation-delay: 1s;">
+                <div class="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-accent/30 transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-accent mb-1">98%</div>
+                    <div class="text-sm text-gray-300">Success Rate</div>
+                </div>
+                <div class="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-accent/30 transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-accent mb-1">10K+</div>
+                    <div class="text-sm text-gray-300">Active Traders</div>
+                </div>
+                <div class="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-accent/30 transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-accent mb-1">24/7</div>
+                    <div class="text-sm text-gray-300">Support Available</div>
+                </div>
+                <div class="text-center p-4 bg-white/5 rounded-lg backdrop-blur-sm border border-white/10 hover:border-accent/30 transition-all duration-300">
+                    <div class="text-3xl md:text-4xl font-bold text-accent mb-1">5+</div>
+                    <div class="text-sm text-gray-300">Years Experience</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Animated SVG Lines -->
+    <svg class="absolute bottom-0 left-0 w-full h-32" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z" fill="#ffcd05" opacity="0.1">
+            <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                values="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z;
+                        M0,120 C400,100 700,80 1000,100 L1200,120 L0,120 Z;
+                        M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z" />
+        </path>
+    </svg>
+    
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <i class="fas fa-chevron-down text-accent text-2xl"></i>
+    </div>
+</section>
+
+<!-- Features Showcase -->
+<section class="py-24 bg-gradient-to-b from-gray-900 to-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-0 left-0 w-full h-full" style="background-image: radial-gradient(circle, #ffcd05 1px, transparent 1px); background-size: 50px 50px;"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Our Services</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Everything You Need to
+                <span class="text-accent">Succeed</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                Comprehensive tools and resources designed to help you master the forex market
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature Card 1 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-chart-line text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Premium Signals</h3>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    Real-time trading signals with precise entry, stop-loss, and take-profit levels. Never miss a profitable opportunity.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Daily signal updates</li>
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Risk management included</li>
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Multi-timeframe analysis</li>
+                </ul>
+            </div>
+            
+            <!-- Feature Card 2 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-graduation-cap text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Expert Training</h3>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    Comprehensive courses from beginner to advanced levels taught by professional traders with years of experience.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Video tutorials & live sessions</li>
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Trading psychology mastery</li>
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Certificate upon completion</li>
+                </ul>
+            </div>
+            
+            <!-- Feature Card 3 -->
+            <div class="group bg-primary/50 backdrop-blur-sm p-8 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="w-16 h-16 bg-gradient-to-br from-accent to-yellow-600 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-users text-primary text-2xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-3">Community Access</h3>
+                <p class="text-gray-300 mb-4 leading-relaxed">
+                    Join thousands of like-minded traders sharing insights, strategies, and success stories in our exclusive community.
+                </p>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Private Discord server</li>
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Weekly Q&A sessions</li>
+                    <li class="flex items-center"><i class="fas fa-check text-accent mr-2"></i> Networking opportunities</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Value Proposition -->
+<section class="py-24 bg-primary relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Why Choose Us</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                Three Pillars of
+                <span class="text-accent">Trading Success</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                Our proven methodology combines precision, honesty, and continuous learning
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="group text-center p-10 bg-gradient-to-b from-gray-800/50 to-transparent rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:scale-105">
+                <div class="w-20 h-20 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent/50">
+                    <i class="fas fa-bullseye text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Precision & Accuracy</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    High-precision signals based on advanced technical analysis, fundamental research, and proven market patterns. Our algorithms and expert analysts work 24/7 to identify the best opportunities.
+                </p>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <div class="flex justify-center items-center space-x-6">
+                        <div>
+                            <div class="text-2xl font-bold text-accent">98%</div>
+                            <div class="text-xs text-gray-400">Accuracy Rate</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-accent">50+</div>
+                            <div class="text-xs text-gray-400">Pairs Covered</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group text-center p-10 bg-gradient-to-b from-gray-800/50 to-transparent rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:scale-105">
+                <div class="w-20 h-20 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent/50">
+                    <i class="fas fa-shield-alt text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Full Transparency</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Clear performance tracking, detailed trade history, and honest communication about our methods. We believe in building trust through openness and accountability.
+                </p>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <div class="flex justify-center items-center space-x-6">
+                        <div>
+                            <div class="text-2xl font-bold text-accent">100%</div>
+                            <div class="text-xs text-gray-400">Verified Results</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-accent">Real</div>
+                            <div class="text-xs text-gray-400">Time Updates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="group text-center p-10 bg-gradient-to-b from-gray-800/50 to-transparent rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:scale-105">
+                <div class="w-20 h-20 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-accent/50">
+                    <i class="fas fa-graduation-cap text-primary text-3xl"></i>
+                </div>
+                <h3 class="text-2xl font-bold text-white mb-4">Continuous Education</h3>
+                <p class="text-gray-300 leading-relaxed">
+                    Comprehensive learning resources including video courses, webinars, ebooks, and live trading sessions to build your knowledge from the ground up.
+                </p>
+                <div class="mt-6 pt-6 border-t border-white/10">
+                    <div class="flex justify-center items-center space-x-6">
+                        <div>
+                            <div class="text-2xl font-bold text-accent">200+</div>
+                            <div class="text-xs text-gray-400">Video Lessons</div>
+                        </div>
+                        <div>
+                            <div class="text-2xl font-bold text-accent">Weekly</div>
+                            <div class="text-xs text-gray-400">Live Sessions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-24 bg-gradient-to-b from-gray-900 to-primary relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Simple Process</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                How It <span class="text-accent">Works</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                Get started in just four simple steps
+            </p>
+        </div>
+        
+        <div class="relative">
+            <!-- Connection Line -->
+            <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-accent/20 via-accent to-accent/20 transform -translate-y-1/2"></div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
+                <div class="text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-24 h-24 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-accent/50 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-primary text-3xl font-bold">1</span>
+                        </div>
+                        <div class="absolute -top-2 -right-2 w-8 h-8 bg-accent rounded-full animate-ping opacity-75"></div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Choose Your Plan</h3>
+                    <p class="text-gray-300 text-sm">
+                        Select the subscription that fits your trading goals and budget
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-24 h-24 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-accent/50 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-primary text-3xl font-bold">2</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Receive Signals</h3>
+                    <p class="text-gray-300 text-sm">
+                        Get instant notifications with detailed trade setups and analysis
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-24 h-24 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-accent/50 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-primary text-3xl font-bold">3</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Execute Trades</h3>
+                    <p class="text-gray-300 text-sm">
+                        Follow our precise instructions on your preferred trading platform
+                    </p>
+                </div>
+                
+                <div class="text-center group">
+                    <div class="relative inline-block mb-6">
+                        <div class="w-24 h-24 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mx-auto shadow-2xl shadow-accent/50 group-hover:scale-110 transition-transform duration-300">
+                            <span class="text-primary text-3xl font-bold">4</span>
+                        </div>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Track & Profit</h3>
+                    <p class="text-gray-300 text-sm">
+                        Monitor your results and watch your portfolio grow consistently
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section class="py-24 bg-primary relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffcd05\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
+    </div>
+    
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center mb-16">
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Success Stories</span>
+            </div>
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+                What Our <span class="text-accent">Traders Say</span>
+            </h2>
+            <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                Real experiences from our thriving community of successful traders
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {% for testimonial in testimonials %}
+            <div class="group bg-gradient-to-b from-gray-800/70 to-gray-900/50 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-gradient-to-br from-accent to-yellow-600 rounded-full flex items-center justify-center mr-3 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user text-primary text-lg"></i>
+                    </div>
+                    <div>
+                        <h4 class="text-white font-semibold">{{ testimonial.name }}</h4>
+                        <p class="text-gray-400 text-xs">{{ testimonial.date|date:"M d, Y" }}</p>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                    <i class="fas fa-star text-accent"></i>
+                </div>
+                <p class="text-gray-300 italic leading-relaxed text-sm">"{{ testimonial.message }}"</p>
+                <div class="mt-4 pt-4 border-t border-white/10">
+                    <span class="text-accent text-xs font-semibold">Verified Trader</span>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <!-- Trust Badges -->
+        <div class="mt-16 flex flex-wrap justify-center items-center gap-8 opacity-60">
+            <div class="text-center">
+                <i class="fas fa-shield-alt text-3xl text-accent mb-2"></i>
+                <p class="text-xs text-gray-400">Secure Platform</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-lock text-3xl text-accent mb-2"></i>
+                <p class="text-xs text-gray-400">SSL Protected</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-certificate text-3xl text-accent mb-2"></i>
+                <p class="text-xs text-gray-400">Verified Results</p>
+            </div>
+            <div class="text-center">
+                <i class="fas fa-award text-3xl text-accent mb-2"></i>
+                <p class="text-xs text-gray-400">Award Winning</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-24 bg-gradient-to-r from-primary via-gray-900 to-primary relative overflow-hidden">
+    <div class="absolute inset-0 animate-gradient opacity-20"></div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Ready to Transform Your
+            <span class="text-accent">Trading Journey?</span>
+        </h2>
+        <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+            Join thousands of successful traders who have already elevated their trading game with Elite Forex
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="{% url 'pricing' %}" class="group bg-accent text-primary px-10 py-5 rounded-xl font-bold text-lg hover:bg-yellow-400 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-accent/50">
+                Start Trading Today
+                <i class="fas fa-rocket ml-2 group-hover:translate-x-1 transition-transform inline-block"></i>
+            </a>
+            <a href="{% url 'classes_enroll' %}" class="border-2 border-accent text-accent px-10 py-5 rounded-xl font-bold text-lg hover:bg-accent hover:text-primary transition-all duration-300 transform hover:scale-105">
+                Explore Courses
+            </a>
+        </div>
+        <p class="text-sm text-gray-400 mt-8">
+            <i class="fas fa-check-circle text-accent mr-2"></i>
+            No credit card required • 7-day money-back guarantee • Cancel anytime
+        </p>
+    </div>
+</section>
+
+<style>
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Smooth scroll behavior */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #005073;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffcd05;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e6b800;
+}
+
+/* Floating animation for hero elements */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Gradient text effect */
+.gradient-text {
+    background: linear-gradient(135deg, #ffcd05 0%, #ffa500 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Card hover glow effect */
+.card-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 205, 5, 0.3);
+}
+
+/* Pulse animation for badges */
+@keyframes pulse-slow {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+</style>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Intersection Observer for scroll animations
+document.addEventListener('DOMContentLoaded', function() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Observe all sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(30px)';
+        section.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+        observer.observe(section);
+    });
+
+    // Counter animation for stats
+    const animateCounter = (element, target, duration = 2000) => {
+        let current = 0;
+        const increment = target / (duration / 16);
+        const timer = setInterval(() => {
+            current += increment;
+            if (current >= target) {
+                current = target;
+                clearInterval(timer);
+            }
+            element.textContent = Math.floor(current).toLocaleString();
+        }, 16);
+    };
+
+    // Trigger counter animations when stats section is visible
+    const statsObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = 'true';
+                const counters = entry.target.querySelectorAll('[data-count]');
+                counters.forEach(counter => {
+                    const target = parseInt(counter.dataset.count);
+                    animateCounter(counter, target);
+                });
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.querySelector('.grid.grid-cols-2.md\\:grid-cols-4');
+    if (statsSection) {
+        statsObserver.observe(statsSection);
+    }
+
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Parallax effect for hero background
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.animate-gradient');
+        parallaxElements.forEach(element => {
+            element.style.transform = `translateY(${scrolled * 0.5}px)`;
+        });
+    });
+
+    // Add hover effect to feature cards
+    const cards = document.querySelectorAll('.group');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-8px)';
+        });
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+        });
+    });
+
+    // Animate elements on scroll
+    const fadeElements = document.querySelectorAll('.opacity-0');
+    const fadeObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+            }
+        });
+    }, { threshold: 0.1 });
+
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
+});
+</script>
+{% endblock %}

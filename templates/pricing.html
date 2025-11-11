@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<section class="py-16 bg-gray-900">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Pricing & Plans</h1>
+            <p class="text-gray-300 text-xl">Choose the perfect plan for your trading journey</p>
+        </div>
+
+        <!-- Subscription Tiers -->
+        <div>
+            <h2 class="text-3xl font-bold text-white mb-8 text-center">Subscription Plans</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {% for tier in subscription_tiers %}
+                <div class="bg-primary rounded-lg p-8 border-2 border-gray-700 hover:border-accent transition-colors">
+                    <div class="text-center mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-2">{{ tier.name }}</h3>
+                        <div class="text-4xl font-bold text-accent mb-2">{{ tier.price }}</div>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        {% for benefit in tier.benefits %}
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            {{ benefit }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    <a href="{% url tier.url %}" class="block w-full bg-accent text-primary text-center py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
+                        Select Plan
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

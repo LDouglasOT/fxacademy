@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Forex Academy & Signals{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-primary py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="mb-8">
+            <h1 class="text-3xl font-bold text-white">Welcome, {{ user.username }}!</h1>
+            <p class="text-gray-300 mt-2">Manage your account, view purchases, and access the community.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Account Details -->
+            <div class="bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-accent mb-4">Account Details</h2>
+                <div class="space-y-2">
+                    <p class="text-white"><strong>Username:</strong> {{ user.username }}</p>
+                    <p class="text-white"><strong>Email:</strong> {{ user.email|default:"Not provided" }}</p>
+                    <p class="text-white"><strong>Member since:</strong> {{ user.date_joined|date:"F j, Y" }}</p>
+                </div>
+                <div class="mt-4">
+                    <a href="{% url 'logout' %}" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md text-sm font-medium">Logout</a>
+                </div>
+            </div>
+
+            <!-- Purchases -->
+            <div class="bg-gray-800 rounded-lg shadow-md p-6">
+                <h2 class="text-xl font-semibold text-accent mb-4">Your Purchases</h2>
+                {% if purchases %}
+                    <div class="space-y-3">
+                        {% for purchase in purchases %}
+                            <div class="border border-gray-600 rounded p-3">
+                                <p class="text-white font-medium">{{ purchase.item_type|title }} - {{ purchase.tier }}</p>
+                                <p class="text-gray-300 text-sm">Purchased on {{ purchase.purchase_date|date:"F j, Y" }}</p>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    <p class="text-gray-300">No purchases yet. <a href="{% url 'pricing' %}" class="text-accent hover:text-yellow-400">Browse our offerings</a>.</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Community Section -->
+        <div class="mt-8 bg-gray-800 rounded-lg shadow-md p-6">
+            <h2 class="text-xl font-semibold text-accent mb-4">Community Posts</h2>
+            {% if community_posts %}
+                <div class="space-y-4">
+                    {% for post in community_posts %}
+                        <div class="border border-gray-600 rounded p-4">
+                            <h3 class="text-white font-medium">{{ post.title }}</h3>
+                            <p class="text-gray-300 text-sm mt-1">{{ post.content }}</p>
+                            <p class="text-gray-400 text-xs mt-2">Posted on {{ post.created_at|date:"F j, Y" }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <p class="text-gray-300">No community posts yet. Share your thoughts and experiences!</p>
+            {% endif %}
+            <div class="mt-4">
+                <button class="bg-accent hover:bg-yellow-400 text-primary px-4 py-2 rounded-md text-sm font-medium">Create New Post</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
