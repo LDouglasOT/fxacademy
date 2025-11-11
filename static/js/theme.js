@@ -2,8 +2,8 @@
 const themeToggle = document.getElementById('theme-toggle');
 const html = document.documentElement;
 
-// Check for saved theme preference or default to dark mode
-const currentTheme = localStorage.getItem('theme') || 'dark';
+// Check for saved theme preference or default to light mode
+const currentTheme = localStorage.getItem('theme') || 'light';
 html.classList.toggle('dark', currentTheme === 'dark');
 
 // Update button icon and colors based on current theme
@@ -14,11 +14,11 @@ function updateThemeIcon() {
     // Update body background and text colors
     const body = document.body;
     if (isDark) {
-        body.style.backgroundColor = '#005073';
-        body.style.color = '#ffffff';
+        body.style.backgroundColor = '#f8f9fa';
+        body.style.color = '#005073';
     } else {
         body.style.backgroundColor = '#ffffff';
-        body.style.color = '#005073';
+        body.style.color = '#1f2937';
     }
 }
 

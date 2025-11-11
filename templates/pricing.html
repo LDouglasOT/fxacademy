@@ -1,36 +1,144 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<section class="py-16 bg-gray-900">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<section class="py-16 bg-gradient-to-b from-gray-900 to-primary relative overflow-hidden">
+    <!-- Background elements -->
+    <div class="absolute inset-0 opacity-5">
+        <div class="absolute top-20 left-20 w-32 h-32 bg-accent rounded-full animate-pulse"></div>
+        <div class="absolute bottom-20 right-20 w-48 h-48 bg-accent rounded-full animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Pricing & Plans</h1>
-            <p class="text-gray-300 text-xl">Choose the perfect plan for your trading journey</p>
+            <div class="inline-block mb-4">
+                <span class="text-accent text-sm font-semibold uppercase tracking-wider">Choose Your Plan</span>
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">
+                Account Types
+            </h1>
+            <p class="text-gray-300 text-xl max-w-2xl mx-auto">
+                Choose the perfect account type for your trading journey. Upgrade anytime as you grow.
+            </p>
         </div>
 
-        <!-- Subscription Tiers -->
-        <div>
-            <h2 class="text-3xl font-bold text-white mb-8 text-center">Subscription Plans</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {% for tier in subscription_tiers %}
-                <div class="bg-primary rounded-lg p-8 border-2 border-gray-700 hover:border-accent transition-colors">
-                    <div class="text-center mb-6">
-                        <h3 class="text-2xl font-bold text-white mb-2">{{ tier.name }}</h3>
-                        <div class="text-4xl font-bold text-accent mb-2">{{ tier.price }}</div>
+        <!-- Subscription Plans -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {% for subscription in subscriptions %}
+            <div class="group relative bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-white/10 hover:border-accent/50 transition-all duration-500 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-accent/20">
+                
+                <!-- Premium Badge -->
+                {% if subscription.account_type == 'premium' %}
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div class="bg-gradient-to-r from-accent to-yellow-500 text-primary px-4 py-2 rounded-full text-sm font-bold">
+                        MOST POPULAR
                     </div>
-                    <ul class="space-y-3 mb-8">
-                        {% for benefit in tier.benefits %}
-                        <li class="flex items-center text-gray-300">
-                            <i class="fas fa-check text-accent mr-3"></i>
-                            {{ benefit }}
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    <a href="{% url tier.url %}" class="block w-full bg-accent text-primary text-center py-3 rounded-lg font-semibold hover:bg-yellow-400 transition-colors">
-                        Select Plan
+                </div>
+                {% endif %}
+
+                <!-- Bots Special Badge -->
+                {% if subscription.account_type == 'bots' %}
+                <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                    <div class="bg-gradient-to-r from-green-500 to-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">
+                        FREE + SETUP FEE
+                    </div>
+                </div>
+                {% endif %}
+
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-bold text-white mb-2">{{ subscription.name }}</h3>
+                    <div class="text-4xl font-bold text-accent mb-2">
+                        {% if subscription.price == 0 %}
+                            Free
+                        {% else %}
+                            ${{ subscription.price }}
+                        {% endif %}
+                    </div>
+                    {% if subscription.account_type == 'bots' %}
+                    <p class="text-sm text-gray-300">+ $100 setup fee for bots</p>
+                    {% endif %}
+                </div>
+
+                <!-- Features -->
+                <ul class="space-y-3 mb-8">
+                    {% for feature in subscription.features.splitlines %}
+                    <li class="flex items-center text-gray-300">
+                        <i class="fas fa-check text-accent mr-3"></i>
+                        {{ feature }}
+                    </li>
+                    {% endfor %}
+                    
+                    <!-- Access Levels -->
+                    <li class="flex items-center text-gray-300">
+                        <i class="fas {% if subscription.can_access_signals %}fa-check text-accent{% else %}fa-times text-red-400{% endif %} mr-3"></i>
+                        Trading Signals Access
+                    </li>
+                    <li class="flex items-center text-gray-300">
+                        <i class="fas {% if subscription.can_access_bots %}fa-check text-accent{% else %}fa-times text-red-400{% endif %} mr-3"></i>
+                        Trading Bots Access
+                    </li>
+                    <li class="flex items-center text-gray-300">
+                        <i class="fas {% if subscription.can_access_classes %}fa-check text-accent{% else %}fa-times text-red-400{% endif %} mr-3"></i>
+                        Classes & Training
+                    </li>
+                    <li class="flex items-center text-gray-300">
+                        <i class="fas {% if subscription.can_access_community %}fa-check text-accent{% else %}fa-times text-red-400{% endif %} mr-3"></i>
+                        Community Access
+                    </li>
+                </ul>
+
+                <a href="{% url 'signup' %}" class="block w-full bg-gradient-to-r from-accent to-yellow-500 text-primary text-center py-4 rounded-xl font-semibold hover:from-yellow-500 hover:to-accent transition-all duration-300 transform hover:scale-105 shadow-lg">
+                    {% if subscription.price == 0 %}
+                        Start Free
+                    {% else %}
+                        Choose Plan
+                    {% endif %}
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- Additional Information -->
+        <div class="mt-16 text-center">
+            <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold text-white mb-4">
+                    Need More Information?
+                </h3>
+                <p class="text-gray-300 mb-6">
+                    Join our community to learn more about our services and get personalized recommendations.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-blue-500 hover:to-blue-600 transition-all duration-300 flex items-center justify-center">
+                        <i class="fab fa-telegram-plane mr-2"></i>
+                        Join Free Telegram
+                    </a>
+                    <a href="#" class="bg-gradient-to-r from-green-600 to-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:from-green-500 hover:to-green-600 transition-all duration-300 flex items-center justify-center">
+                        <i class="fab fa-whatsapp mr-2"></i>
+                        Join WhatsApp Premium
                     </a>
                 </div>
-                {% endfor %}
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="mt-16">
+            <h3 class="text-3xl font-bold text-white text-center mb-12">Frequently Asked Questions</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-accent mb-2">What happens when I upgrade?</h4>
+                    <p class="text-gray-300">Your account will be immediately upgraded with access to all features of your new subscription level.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-accent mb-2">Can I cancel anytime?</h4>
+                    <p class="text-gray-300">Yes, you can cancel your subscription at any time. No questions asked, no cancellation fees.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-accent mb-2">What's the setup fee for bots?</h4>
+                    <p class="text-gray-300">Bots are free to use, but there's a one-time $100 setup fee to configure and deploy your personal trading bots.</p>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg p-6">
+                    <h4 class="text-lg font-semibold text-accent mb-2">Do you offer refunds?</h4>
+                    <p class="text-gray-300">We offer a 7-day money-back guarantee for all paid subscriptions. No questions asked.</p>
+                </div>
             </div>
         </div>
     </div>

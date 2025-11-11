@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+
+{% block title %}Email Verified - Forex Academy{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-primary via-blue-800 to-indigo-900 py-12 px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+    <div class="max-w-2xl mx-auto text-center">
+        <!-- Success Icon -->
+        <div class="w-24 h-24 mx-auto mb-8 bg-green-500/20 rounded-full flex items-center justify-center">
+            <i class="fas fa-check-circle text-4xl text-green-400"></i>
+        </div>
+        
+        <!-- Header -->
+        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+            Email Verified! 🎉
+        </h1>
+        <p class="text-xl text-gray-300 mb-8">
+            Welcome to Forex Academy, <strong class="text-accent">{{ user.username }}</strong>!
+        </p>
+        
+        <!-- Success Card -->
+        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10 mb-8">
+            <div class="text-center mb-6">
+                <div class="w-16 h-16 mx-auto mb-4 bg-green-500/20 rounded-full flex items-center justify-center">
+                    <i class="fas fa-rocket text-green-400 text-2xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-white mb-2">Account Successfully Activated!</h2>
+                <p class="text-gray-300">Your email has been verified and your account is now fully active.</p>
+            </div>
+            
+            <!-- What's Next -->
+            <div class="bg-blue-500/10 border border-blue-500/20 rounded-lg p-6 mb-6">
+                <h3 class="text-white font-semibold mb-4 flex items-center justify-center">
+                    <i class="fas fa-star text-accent mr-2"></i>
+                    🚀 You're All Set! Here's what's available now:
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="text-white font-medium">Community Access</h4>
+                            <p class="text-sm text-gray-300">Join our trading community</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="text-white font-medium">Premium Signals</h4>
+                            <p class="text-sm text-gray-300">Daily trading opportunities</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="text-white font-medium">Telegram Updates</h4>
+                            <p class="text-sm text-gray-300">Real-time notifications</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <i class="fas fa-check-circle text-green-400 mt-1"></i>
+                        <div>
+                            <h4 class="text-white font-medium">WhatsApp Group</h4>
+                            <p class="text-sm text-gray-300">Direct trader support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Account Status -->
+            <div class="bg-green-500/10 border border-green-500/20 rounded-lg p-4">
+                <div class="flex items-center justify-center space-x-2 mb-2">
+                    <div class="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="text-green-400 font-semibold">Account Status: Active</span>
+                </div>
+                <p class="text-sm text-gray-300">You can now access all features of your free account</p>
+            </div>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="space-y-4">
+            <a href="{% url 'dashboard' %}" class="block w-full bg-accent hover:bg-yellow-400 text-primary px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105 shadow-lg">
+                <i class="fas fa-tachometer-alt mr-2"></i>
+                Go to Dashboard
+            </a>
+            
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="{% url 'pricing' %}" class="flex-1 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold border border-white/20 transition-all duration-300">
+                    <i class="fas fa-crown mr-2"></i>
+                    Upgrade Account
+                </a>
+                <a href="{% url 'homepage' %}" class="flex-1 bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-semibold border border-white/20 transition-all duration-300">
+                    <i class="fas fa-home mr-2"></i>
+                    Explore Platform
+                </a>
+            </div>
+        </div>
+        
+        <!-- Social Links -->
+        <div class="mt-12 pt-8 border-t border-white/10">
+            <p class="text-gray-400 text-sm mb-4">Connect with our trading community</p>
+            <div class="flex justify-center space-x-4">
+                <a href="https://t.me/your_telegram_channel" target="_blank" rel="noopener noreferrer" 
+                   class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-telegram mr-2"></i>
+                    Join Telegram
+                </a>
+                <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer"
+                   class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-lg font-semibold transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i>
+                    WhatsApp Group
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -2,7 +2,7 @@
 
 {% block content %}
 <!-- Hero Section -->
-<section class="relative bg-primary overflow-hidden py-16">
+<section class="relative bg-white overflow-hidden py-16 border-b border-gray-200">
     <div class="absolute inset-0 animate-gradient opacity-10"></div>
     
     <!-- Animated Background Elements -->
@@ -17,37 +17,47 @@
                 🎯 Premium Trading Signals
             </span>
         </div>
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
-            Purchase <span class="text-accent">Signals</span>
+        <h1 class="text-5xl md:text-6xl font-bold text-gray-800 mb-6">
+            {% if has_access %}
+                <span class="text-accent">Signals Dashboard</span>
+            {% else %}
+                <span class="text-accent">Upgrade Required</span>
+            {% endif %}
         </h1>
-        <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-8">
-            Select your preferred signals plan and start receiving professional forex trading signals today
+        <p class="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            {% if has_access %}
+                Access your premium trading signals and start profitable trading today
+            {% elif show_login_prompt %}
+                Sign in to access premium trading signals
+            {% else %}
+                Upgrade your account to access premium trading signals
+            {% endif %}
         </p>
         
         <!-- Quick Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 max-w-3xl mx-auto">
-            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+            <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
                 <div class="text-2xl font-bold text-accent">98%</div>
-                <div class="text-xs text-gray-300">Win Rate</div>
+                <div class="text-xs text-gray-600">Win Rate</div>
             </div>
-            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+            <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
                 <div class="text-2xl font-bold text-accent">24/7</div>
-                <div class="text-xs text-gray-300">Signals</div>
+                <div class="text-xs text-gray-600">Signals</div>
             </div>
-            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+            <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
                 <div class="text-2xl font-bold text-accent">5K+</div>
-                <div class="text-xs text-gray-300">Members</div>
+                <div class="text-xs text-gray-600">Members</div>
             </div>
-            <div class="bg-white/5 backdrop-blur-sm rounded-lg p-3 border border-white/10">
+            <div class="bg-gray-50 rounded-lg p-3 border border-gray-200">
                 <div class="text-2xl font-bold text-accent">Real</div>
-                <div class="text-xs text-gray-300">Time Data</div>
+                <div class="text-xs text-gray-600">Time Data</div>
             </div>
         </div>
     </div>
     
     <!-- Wave Divider -->
     <svg class="absolute bottom-0 left-0 w-full h-20" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z" fill="#111827" opacity="1">
+        <path d="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z" fill="#f8f9fa" opacity="1">
             <animate attributeName="d" dur="10s" repeatCount="indefinite"
                 values="M0,120 C300,80 600,100 900,60 L1200,120 L0,120 Z;
                         M0,120 C400,100 700,80 1000,100 L1200,120 L0,120 Z;
@@ -57,360 +67,285 @@
 </section>
 
 <!-- Main Content -->
-<section class="py-16 bg-gray-900">
+<section class="py-16 bg-gray-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <!-- Payment Form Column -->
-            <div class="space-y-6">
-                <!-- Plan Selection Cards -->
-                <div>
-                    <h2 class="text-3xl font-bold text-white mb-6 flex items-center">
-                        <i class="fas fa-crown text-accent mr-3"></i>
-                        Choose Your Plan
-                    </h2>
-                    <div class="space-y-4">
-                        <!-- Monthly Plan -->
-                        <div class="plan-card group bg-gradient-to-br from-primary/50 to-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-300 cursor-pointer" data-plan="monthly" data-price="99">
-                            <div class="flex items-start justify-between">
-                                <div class="flex-1">
-                                    <div class="flex items-center mb-2">
-                                        <div class="w-6 h-6 rounded-full border-2 border-gray-400 group-hover:border-accent transition-colors mr-3 flex items-center justify-center">
-                                            <div class="w-3 h-3 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+        
+        {% if has_access %}
+            <!-- User has access - show signals dashboard -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-check-circle mr-2"></i>
+                    Active {{ subscription_name }} Account
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Welcome to Your Signals Dashboard</h2>
+                <p class="text-gray-600">You have full access to our premium trading signals</p>
+            </div>
+            
+            <!-- Signals content would go here -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-chart-line text-accent mr-3"></i>
+                        Live Signals Feed
+                    </h3>
+                    <p class="text-gray-600">Your trading signals would be displayed here...</p>
+                </div>
+                
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
+                        <i class="fas fa-history text-accent mr-3"></i>
+                        Signal History
+                    </h3>
+                    <p class="text-gray-600">Your signal performance history would be shown here...</p>
+                </div>
+            </div>
+            
+            <!-- Live Performance Tracker -->
+            <div class="mt-16">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Live Performance Tracker Column -->
+                    <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm sticky top-24">
+                        <div class="flex items-center justify-between mb-6">
+                            <h2 class="text-2xl font-bold text-gray-800 flex items-center">
+                                <i class="fas fa-chart-line text-accent mr-3"></i>
+                                Live Performance
+                            </h2>
+                            <div class="flex items-center">
+                                <span class="relative flex h-3 w-3 mr-2">
+                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                </span>
+                                <span class="text-green-600 text-sm font-semibold">LIVE</span>
+                            </div>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            <!-- Stat Card 1 -->
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 hover:border-accent transition-all duration-300 transform hover:scale-105">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-500 text-sm">Signals Sent Today</span>
+                                        <div class="flex items-baseline mt-1">
+                                            <span class="text-accent font-bold text-3xl" id="signals-today">12</span>
+                                            <span class="text-green-600 text-sm ml-2">+3 ↑</span>
                                         </div>
-                                        <h3 class="text-xl font-bold text-white">Monthly Plan</h3>
                                     </div>
-                                    <p class="text-gray-300 text-sm mb-3 ml-9">Perfect for testing our signals</p>
-                                    <ul class="space-y-2 ml-9">
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Daily trading signals
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Entry & exit points
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Risk management tips
-                                        </li>
-                                    </ul>
+                                    <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-bell text-accent text-xl"></i>
+                                    </div>
                                 </div>
-                                <div class="text-right">
-                                    <div class="text-3xl font-bold text-accent">$99</div>
-                                    <div class="text-sm text-gray-400">/month</div>
+                            </div>
+    
+                            <!-- Stat Card 2 -->
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 hover:border-accent transition-all duration-300 transform hover:scale-105">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-500 text-sm">Accuracy Rate (30 Days)</span>
+                                        <div class="flex items-baseline mt-1">
+                                            <span class="text-accent font-bold text-3xl" id="accuracy-rate">85</span>
+                                            <span class="text-accent font-bold text-2xl">%</span>
+                                        </div>
+                                        <!-- Progress Bar -->
+                                        <div class="w-full bg-gray-200 rounded-full h-2 mt-2">
+                                            <div id="accuracy-bar" class="bg-accent h-2 rounded-full transition-all duration-500" style="width: 85%"></div>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-bullseye text-accent text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Stat Card 3 -->
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 hover:border-accent transition-all duration-300 transform hover:scale-105">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-500 text-sm">Last Signal Outcome</span>
+                                        <div class="flex items-baseline mt-1">
+                                            <span class="text-green-600 font-bold text-3xl" id="last-outcome">+15</span>
+                                            <span class="text-green-600 text-xl ml-1">pips</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-arrow-trend-up text-green-600 text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Stat Card 4 -->
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-200 hover:border-accent transition-all duration-300 transform hover:scale-105">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <span class="text-gray-500 text-sm">Active Traders</span>
+                                        <div class="flex items-baseline mt-1">
+                                            <span class="text-accent font-bold text-3xl" id="active-traders">1,247</span>
+                                            <span class="text-green-600 text-sm ml-2">+15 ↑</span>
+                                        </div>
+                                    </div>
+                                    <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
+                                        <i class="fas fa-users text-accent text-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <!-- Recent Signals -->
+                            <div class="mt-6 pt-6 border-t border-gray-200">
+                                <h3 class="text-gray-800 font-semibold mb-4 flex items-center">
+                                    <i class="fas fa-history text-accent mr-2"></i>
+                                    Recent Signals
+                                </h3>
+                                <div class="space-y-3">
+                                    <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <span class="text-gray-800 font-semibold">EUR/USD</span>
+                                                <p class="text-xs text-gray-500">Entry: 1.0850</p>
+                                            </div>
+                                            <span class="text-green-600 font-bold">+22 pips</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <span class="text-gray-800 font-semibold">GBP/JPY</span>
+                                                <p class="text-xs text-gray-500">Entry: 188.50</p>
+                                            </div>
+                                            <span class="text-green-600 font-bold">+18 pips</span>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white p-3 rounded-lg border border-gray-200">
+                                        <div class="flex justify-between items-center">
+                                            <div>
+                                                <span class="text-gray-800 font-semibold">USD/CAD</span>
+                                                <p class="text-xs text-gray-500">Entry: 1.3720</p>
+                                            </div>
+                                            <span class="text-green-600 font-bold">+12 pips</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-
-                        <!-- Quarterly Plan - Popular -->
-                        <div class="plan-card group bg-gradient-to-br from-accent/10 to-yellow-600/10 backdrop-blur-sm p-6 rounded-2xl border-2 border-accent/50 hover:border-accent transition-all duration-300 cursor-pointer relative overflow-hidden" data-plan="quarterly" data-price="249">
-                            <div class="absolute top-4 right-4 bg-accent text-primary px-3 py-1 rounded-full text-xs font-bold">
-                                MOST POPULAR
-                            </div>
-                            <div class="flex items-start justify-between">
-                                <div class="flex-1">
-                                    <div class="flex items-center mb-2">
-                                        <div class="w-6 h-6 rounded-full border-2 border-accent transition-colors mr-3 flex items-center justify-center">
-                                            <div class="w-3 h-3 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-white">Quarterly Plan</h3>
-                                    </div>
-                                    <p class="text-gray-300 text-sm mb-3 ml-9">Save $48 compared to monthly</p>
-                                    <ul class="space-y-2 ml-9">
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Everything in Monthly
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Priority support
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Weekly market analysis
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Trading webinars
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-3xl font-bold text-accent">$249</div>
-                                    <div class="text-sm text-gray-400">/3 months</div>
-                                    <div class="text-xs text-green-400 mt-1">Save $48</div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Lifetime Plan -->
-                        <div class="plan-card group bg-gradient-to-br from-primary/50 to-gray-800/50 backdrop-blur-sm p-6 rounded-2xl border border-white/10 hover:border-accent/50 transition-all duration-300 cursor-pointer relative" data-plan="lifetime" data-price="999">
-                            <div class="absolute top-4 right-4 bg-green-600 text-white px-3 py-1 rounded-full text-xs font-bold">
-                                BEST VALUE
-                            </div>
-                            <div class="flex items-start justify-between">
-                                <div class="flex-1">
-                                    <div class="flex items-center mb-2">
-                                        <div class="w-6 h-6 rounded-full border-2 border-gray-400 group-hover:border-accent transition-colors mr-3 flex items-center justify-center">
-                                            <div class="w-3 h-3 rounded-full bg-accent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                        </div>
-                                        <h3 class="text-xl font-bold text-white">Lifetime Access</h3>
-                                    </div>
-                                    <p class="text-gray-300 text-sm mb-3 ml-9">One-time payment, forever access</p>
-                                    <ul class="space-y-2 ml-9">
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Everything in Quarterly
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Lifetime access
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> 1-on-1 mentorship
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> Exclusive strategies
-                                        </li>
-                                        <li class="flex items-center text-sm text-gray-400">
-                                            <i class="fas fa-check text-accent mr-2"></i> VIP community access
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="text-right">
-                                    <div class="text-3xl font-bold text-accent">$999</div>
-                                    <div class="text-sm text-gray-400">one-time</div>
-                                    <div class="text-xs text-green-400 mt-1">Save $1,000+</div>
-                                </div>
-                            </div>
+                        
+                        <div class="mt-6 text-center p-4 bg-gray-50 rounded-lg border border-gray-200">
+                            <p class="text-gray-500 text-sm flex items-center justify-center">
+                                <i class="fas fa-sync-alt text-accent mr-2 animate-spin"></i>
+                                Data updates every 3 seconds
+                            </p>
                         </div>
                     </div>
-                </div>
 
-                <!-- Payment Form -->
-                <div class="bg-gradient-to-br from-primary/70 to-gray-800/70 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-                    <h2 class="text-2xl font-bold text-white mb-6 flex items-center">
-                        <i class="fas fa-credit-card text-accent mr-3"></i>
-                        Payment Details
-                    </h2>
-                    <form method="post" class="space-y-5">
-                        {% csrf_token %}
-                        <input type="hidden" id="selected-plan" name="plan" value="quarterly">
-                        
-                        <div>
-                            <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Full Name</label>
-                            <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="John Doe">
-                        </div>
-                        
-                        <div>
-                            <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email Address</label>
-                            <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="john@example.com">
-                        </div>
-                        
-                        <div>
-                            <label for="card_number" class="block text-sm font-semibold text-gray-300 mb-2">Card Number</label>
-                            <div class="relative">
-                                <input type="text" id="card_number" name="card_number" placeholder="1234 5678 9012 3456" required maxlength="19" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
-                                <div class="absolute right-3 top-1/2 transform -translate-y-1/2 flex space-x-2">
-                                    <i class="fab fa-cc-visa text-2xl text-blue-500"></i>
-                                    <i class="fab fa-cc-mastercard text-2xl text-red-500"></i>
-                                </div>
-                            </div>
-                        </div>
-                        
+                    <!-- Trust Badges -->
+                    <div class="bg-white rounded-2xl p-6 border border-gray-200 shadow-sm">
+                        <h3 class="text-gray-800 font-semibold mb-4 text-center">Why Traders Trust Us</h3>
                         <div class="grid grid-cols-2 gap-4">
-                            <div>
-                                <label for="expiry" class="block text-sm font-semibold text-gray-300 mb-2">Expiry Date</label>
-                                <input type="text" id="expiry" name="expiry" placeholder="MM/YY" required maxlength="5" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                            <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fas fa-shield-alt text-accent text-2xl mb-2"></i>
+                                <p class="text-xs text-gray-600">Secure Payment</p>
                             </div>
-                            <div>
-                                <label for="cvv" class="block text-sm font-semibold text-gray-300 mb-2">CVV</label>
-                                <input type="text" id="cvv" name="cvv" placeholder="123" required maxlength="4" class="w-full px-4 py-3 bg-gray-800/50 border border-gray-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all">
+                            <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fas fa-clock text-accent text-2xl mb-2"></i>
+                                <p class="text-xs text-gray-600">Instant Access</p>
                             </div>
-                        </div>
-
-                        <!-- Order Summary -->
-                        <div class="bg-gray-800/50 rounded-lg p-4 border border-gray-700">
-                            <h3 class="text-white font-semibold mb-3">Order Summary</h3>
-                            <div class="space-y-2 text-sm">
-                                <div class="flex justify-between text-gray-300">
-                                    <span>Plan:</span>
-                                    <span id="summary-plan" class="font-semibold text-white">Quarterly Plan</span>
-                                </div>
-                                <div class="flex justify-between text-gray-300">
-                                    <span>Subtotal:</span>
-                                    <span id="summary-subtotal" class="font-semibold text-white">$249.00</span>
-                                </div>
-                                <div class="border-t border-gray-700 pt-2 mt-2"></div>
-                                <div class="flex justify-between text-lg font-bold">
-                                    <span class="text-white">Total:</span>
-                                    <span id="summary-total" class="text-accent">$249.00</span>
-                                </div>
+                            <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fas fa-undo text-accent text-2xl mb-2"></i>
+                                <p class="text-xs text-gray-600">30-Day Refund</p>
                             </div>
-                        </div>
-                        
-                        <button type="submit" class="group w-full bg-gradient-to-r from-accent to-yellow-600 text-primary py-4 rounded-lg font-bold text-lg hover:from-yellow-600 hover:to-accent transition-all duration-300 transform hover:scale-105 hover:shadow-2xl shadow-accent/50 flex items-center justify-center">
-                            <i class="fas fa-lock mr-2"></i>
-                            Complete Secure Purchase
-                            <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
-                        </button>
-                        
-                        <p class="text-xs text-gray-400 text-center">
-                            <i class="fas fa-shield-alt text-accent mr-1"></i>
-                            Your payment information is secure and encrypted
-                        </p>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Live Performance Tracker Column -->
-            <div class="space-y-6">
-                <!-- Live Performance Tracker -->
-                <div class="bg-gradient-to-br from-primary/70 to-gray-800/70 backdrop-blur-sm rounded-2xl p-8 border border-white/10 sticky top-24">
-                    <div class="flex items-center justify-between mb-6">
-                        <h2 class="text-2xl font-bold text-white flex items-center">
-                            <i class="fas fa-chart-line text-accent mr-3"></i>
-                            Live Performance
-                        </h2>
-                        <div class="flex items-center">
-                            <span class="relative flex h-3 w-3 mr-2">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                            </span>
-                            <span class="text-green-400 text-sm font-semibold">LIVE</span>
-                        </div>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <!-- Stat Card 1 -->
-                        <div class="bg-gradient-to-r from-gray-800/70 to-gray-900/70 p-5 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300 transform hover:scale-105">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-gray-400 text-sm">Signals Sent Today</span>
-                                    <div class="flex items-baseline mt-1">
-                                        <span class="text-accent font-bold text-3xl" id="signals-today">12</span>
-                                        <span class="text-green-400 text-sm ml-2">+3 ↑</span>
-                                    </div>
-                                </div>
-                                <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-bell text-accent text-xl"></i>
-                                </div>
+                            <div class="text-center p-3 bg-gray-50 rounded-lg">
+                                <i class="fas fa-headset text-accent text-2xl mb-2"></i>
+                                <p class="text-xs text-gray-600">24/7 Support</p>
                             </div>
-                        </div>
-
-                        <!-- Stat Card 2 -->
-                        <div class="bg-gradient-to-r from-gray-800/70 to-gray-900/70 p-5 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300 transform hover:scale-105">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-gray-400 text-sm">Accuracy Rate (30 Days)</span>
-                                    <div class="flex items-baseline mt-1">
-                                        <span class="text-accent font-bold text-3xl" id="accuracy-rate">85</span>
-                                        <span class="text-accent font-bold text-2xl">%</span>
-                                    </div>
-                                    <!-- Progress Bar -->
-                                    <div class="w-full bg-gray-700 rounded-full h-2 mt-2">
-                                        <div id="accuracy-bar" class="bg-gradient-to-r from-accent to-yellow-600 h-2 rounded-full transition-all duration-500" style="width: 85%"></div>
-                                    </div>
-                                </div>
-                                <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-bullseye text-accent text-xl"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stat Card 3 -->
-                        <div class="bg-gradient-to-r from-gray-800/70 to-gray-900/70 p-5 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300 transform hover:scale-105">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-gray-400 text-sm">Last Signal Outcome</span>
-                                    <div class="flex items-baseline mt-1">
-                                        <span class="text-green-400 font-bold text-3xl" id="last-outcome">+15</span>
-                                        <span class="text-green-400 text-xl ml-1">pips</span>
-                                    </div>
-                                </div>
-                                <div class="w-14 h-14 bg-green-500/20 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-arrow-trend-up text-green-400 text-xl"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Stat Card 4 -->
-                        <div class="bg-gradient-to-r from-gray-800/70 to-gray-900/70 p-5 rounded-xl border border-white/5 hover:border-accent/30 transition-all duration-300 transform hover:scale-105">
-                            <div class="flex justify-between items-center">
-                                <div>
-                                    <span class="text-gray-400 text-sm">Active Traders</span>
-                                    <div class="flex items-baseline mt-1">
-                                        <span class="text-accent font-bold text-3xl" id="active-traders">1,247</span>
-                                        <span class="text-green-400 text-sm ml-2">+15 ↑</span>
-                                    </div>
-                                </div>
-                                <div class="w-14 h-14 bg-accent/20 rounded-full flex items-center justify-center">
-                                    <i class="fas fa-users text-accent text-xl"></i>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Recent Signals -->
-                        <div class="mt-6 pt-6 border-t border-white/10">
-                            <h3 class="text-white font-semibold mb-4 flex items-center">
-                                <i class="fas fa-history text-accent mr-2"></i>
-                                Recent Signals
-                            </h3>
-                            <div class="space-y-3">
-                                <div class="bg-gray-800/50 p-3 rounded-lg">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <span class="text-white font-semibold">EUR/USD</span>
-                                            <p class="text-xs text-gray-400">Entry: 1.0850</p>
-                                        </div>
-                                        <span class="text-green-400 font-bold">+22 pips</span>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-800/50 p-3 rounded-lg">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <span class="text-white font-semibold">GBP/JPY</span>
-                                            <p class="text-xs text-gray-400">Entry: 188.50</p>
-                                        </div>
-                                        <span class="text-green-400 font-bold">+18 pips</span>
-                                    </div>
-                                </div>
-                                <div class="bg-gray-800/50 p-3 rounded-lg">
-                                    <div class="flex justify-between items-center">
-                                        <div>
-                                            <span class="text-white font-semibold">USD/CAD</span>
-                                            <p class="text-xs text-gray-400">Entry: 1.3720</p>
-                                        </div>
-                                        <span class="text-green-400 font-bold">+12 pips</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="mt-6 text-center p-4 bg-white/5 rounded-lg">
-                        <p class="text-gray-400 text-sm flex items-center justify-center">
-                            <i class="fas fa-sync-alt text-accent mr-2 animate-spin"></i>
-                            Data updates every 3 seconds
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Trust Badges -->
-                <div class="bg-gradient-to-br from-primary/70 to-gray-800/70 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
-                    <h3 class="text-white font-semibold mb-4 text-center">Why Traders Trust Us</h3>
-                    <div class="grid grid-cols-2 gap-4">
-                        <div class="text-center p-3 bg-white/5 rounded-lg">
-                            <i class="fas fa-shield-alt text-accent text-2xl mb-2"></i>
-                            <p class="text-xs text-gray-300">Secure Payment</p>
-                        </div>
-                        <div class="text-center p-3 bg-white/5 rounded-lg">
-                            <i class="fas fa-clock text-accent text-2xl mb-2"></i>
-                            <p class="text-xs text-gray-300">Instant Access</p>
-                        </div>
-                        <div class="text-center p-3 bg-white/5 rounded-lg">
-                            <i class="fas fa-undo text-accent text-2xl mb-2"></i>
-                            <p class="text-xs text-gray-300">30-Day Refund</p>
-                        </div>
-                        <div class="text-center p-3 bg-white/5 rounded-lg">
-                            <i class="fas fa-headset text-accent text-2xl mb-2"></i>
-                            <p class="text-xs text-gray-300">24/7 Support</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
+            
+        {% elif show_login_prompt %}
+            <!-- User not logged in - show login prompt -->
+            <div class="text-center max-w-2xl mx-auto">
+                <div class="bg-white rounded-2xl p-8 border border-gray-200 shadow-sm">
+                    <i class="fas fa-sign-in-alt text-accent text-4xl mb-4"></i>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-4">Sign In Required</h2>
+                    <p class="text-gray-600 mb-6">Please log in to your account to access premium trading signals.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="{% url 'login' %}" class="bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300">
+                            <i class="fas fa-sign-in-alt mr-2"></i>
+                            Sign In
+                        </a>
+                        <a href="{% url 'signup' %}" class="border-2 border-accent text-accent px-8 py-3 rounded-lg font-semibold hover:bg-accent hover:text-white transition-all duration-300">
+                            <i class="fas fa-user-plus mr-2"></i>
+                            Create Account
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+        {% else %}
+            <!-- User doesn't have access - show upgrade prompt -->
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center px-4 py-2 bg-yellow-100 text-yellow-700 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-exclamation-triangle mr-2"></i>
+                    {{ current_subscription }} Account
+                </div>
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Upgrade Required</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Your current {{ current_subscription }} account doesn't include access to trading signals. Upgrade your account to unlock premium signals and start profitable trading.</p>
+            </div>
+            
+            <!-- Upgrade Options -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                {% for subscription in available_upgrades %}
+                <div class="group bg-white p-6 rounded-2xl border border-gray-200 hover:border-accent transition-all duration-300 transform hover:-translate-y-2 hover:shadow-xl">
+                    <div class="text-center">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">{{ subscription.name }}</h3>
+                        <div class="text-3xl font-bold text-accent mb-4">
+                            {% if subscription.price == 0 %}
+                                Free
+                            {% else %}
+                                ${{ subscription.price }}
+                            {% endif %}
+                        </div>
+                        <ul class="space-y-2 mb-6 text-left">
+                            {% for feature in subscription.features.splitlines %}
+                            <li class="flex items-center text-sm text-gray-600">
+                                <i class="fas fa-check text-accent mr-2"></i>
+                                {{ feature }}
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="{% url 'pricing' %}" class="block w-full bg-accent text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-all duration-300">
+                            Upgrade Now
+                        </a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Current Features -->
+            <div class="mt-16 max-w-2xl mx-auto text-center">
+                <h3 class="text-2xl font-bold text-gray-800 mb-6">Your Current {{ current_subscription }} Account Includes</h3>
+                <div class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm">
+                    <p class="text-gray-600 mb-4">You currently have access to:</p>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-check text-green-400 mr-2"></i>
+                            Community Access
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            Trading Signals
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            Trading Bots
+                        </div>
+                        <div class="flex items-center text-gray-600">
+                            <i class="fas fa-times text-red-400 mr-2"></i>
+                            Classes & Training
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        
     </div>
 </section>
 
@@ -421,13 +356,13 @@
 }
 
 .plan-card.selected {
-    border-color: #ffcd05 !important;
-    background: linear-gradient(135deg, rgba(255, 205, 5, 0.1), rgba(255, 205, 5, 0.05));
+    border-color: #0056b3 !important;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.1), rgba(0, 86, 179, 0.05));
     transform: scale(1.02);
 }
 
 .plan-card.selected .w-6.h-6 {
-    border-color: #ffcd05 !important;
+    border-color: #0056b3 !important;
 }
 
 .plan-card.selected .w-3.h-3 {
@@ -452,7 +387,7 @@
 
 /* Input focus glow */
 input:focus {
-    box-shadow: 0 0 0 3px rgba(255, 205, 5, 0.1);
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
 }
 
 /* Card number formatting */
@@ -471,16 +406,16 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-    background: #005073;
+    background: #f1f5f9;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ffcd05;
+    background: #0056b3;
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #e6b800;
+    background: #003d82;
 }
 </style>
 
@@ -488,81 +423,21 @@ html {
 
 {% block extra_js %}
 <script>
+// Signal purchase page specific JavaScript
 document.addEventListener('DOMContentLoaded', function() {
-    // Plan selection
-    const planCards = document.querySelectorAll('.plan-card');
-    const selectedPlanInput = document.getElementById('selected-plan');
-    const summaryPlan = document.getElementById('summary-plan');
-    const summarySubtotal = document.getElementById('summary-subtotal');
-    const summaryTotal = document.getElementById('summary-total');
-
-    // Plan data
-    const plans = {
-        'monthly': { name: 'Monthly Plan', price: 99 },
-        'quarterly': { name: 'Quarterly Plan', price: 249 },
-        'lifetime': { name: 'Lifetime Access', price: 999 }
-    };
-
-    // Set default selection to quarterly
-    planCards[1].classList.add('selected');
-
-    planCards.forEach(card => {
-        card.addEventListener('click', function() {
-            // Remove selected class from all cards
-            planCards.forEach(c => c.classList.remove('selected'));
-            
-            // Add selected class to clicked card
-            this.classList.add('selected');
-            
-            // Update hidden input
-            const plan = this.dataset.plan;
-            selectedPlanInput.value = plan;
-            
-            // Update order summary
-            const planData = plans[plan];
-            summaryPlan.textContent = planData.name;
-            summarySubtotal.textContent = ' + planData.price.toFixed(2);
-            summaryTotal.textContent = ' + planData.price.toFixed(2);
-        });
-    });
-
-    // Card number formatting
-    const cardNumberInput = document.getElementById('card_number');
-    cardNumberInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\s/g, '');
-        let formattedValue = value.match(/.{1,4}/g)?.join(' ') || value;
-        e.target.value = formattedValue;
-    });
-
-    // Expiry date formatting
-    const expiryInput = document.getElementById('expiry');
-    expiryInput.addEventListener('input', function(e) {
-        let value = e.target.value.replace(/\D/g, '');
-        if (value.length >= 2) {
-            value = value.slice(0, 2) + '/' + value.slice(2, 4);
-        }
-        e.target.value = value;
-    });
-
-    // CVV validation (numbers only)
-    const cvvInput = document.getElementById('cvv');
-    cvvInput.addEventListener('input', function(e) {
-        e.target.value = e.target.value.replace(/\D/g, '');
-    });
-
     // Live Performance Tracker Updates
     function updateTracker() {
         // Mock data updates with smooth animations
         const signals = Math.floor(Math.random() * 5) + 10;
         const accuracy = Math.floor(Math.random() * 10) + 82;
         const outcomes = [
-            { value: 15, color: 'text-green-400' },
-            { value: 8, color: 'text-green-400' },
-            { value: -5, color: 'text-red-400' },
-            { value: 22, color: 'text-green-400' },
-            { value: 12, color: 'text-green-400' },
-            { value: -3, color: 'text-red-400' },
-            { value: 18, color: 'text-green-400' }
+            { value: 15, color: 'text-green-600' },
+            { value: 8, color: 'text-green-600' },
+            { value: -5, color: 'text-red-500' },
+            { value: 22, color: 'text-green-600' },
+            { value: 12, color: 'text-green-600' },
+            { value: -3, color: 'text-red-500' },
+            { value: 18, color: 'text-green-600' }
         ];
         const outcome = outcomes[Math.floor(Math.random() * outcomes.length)];
         const traders = Math.floor(Math.random() * 50) + 1230;
@@ -574,15 +449,22 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Update last outcome
         const outcomeElement = document.getElementById('last-outcome');
-        outcomeElement.textContent = (outcome.value > 0 ? '+' : '') + outcome.value;
-        outcomeElement.className = outcome.color + ' font-bold text-3xl';
+        if (outcomeElement) {
+            outcomeElement.textContent = (outcome.value > 0 ? '+' : '') + outcome.value;
+            outcomeElement.className = outcome.color + ' font-bold text-3xl';
+        }
         
         // Update accuracy bar
-        document.getElementById('accuracy-bar').style.width = accuracy + '%';
+        const accuracyBar = document.getElementById('accuracy-bar');
+        if (accuracyBar) {
+            accuracyBar.style.width = accuracy + '%';
+        }
     }
 
     function animateValue(id, start, end, duration) {
         const element = document.getElementById(id);
+        if (!element) return;
+        
         const range = end - start;
         const increment = range / (duration / 16);
         let current = start;
@@ -631,41 +513,6 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(element);
     });
 
-
-    // Add input field focus effects
-    const inputs = document.querySelectorAll('input');
-    inputs.forEach(input => {
-        input.addEventListener('focus', function() {
-            this.parentElement.style.transform = 'scale(1.01)';
-            this.parentElement.style.transition = 'transform 0.2s ease';
-        });
-        
-        input.addEventListener('blur', function() {
-            this.parentElement.style.transform = 'scale(1)';
-        });
-    });
-
-    // Parallax effect on scroll
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallaxElements = document.querySelectorAll('.animate-gradient');
-        parallaxElements.forEach(element => {
-            element.style.transform = `translateY(${scrolled * 0.3}px)`;
-        });
-    });
-
-    // Add hover effect to stat cards
-    const statCards = document.querySelectorAll('.bg-gradient-to-r');
-    statCards.forEach(card => {
-        card.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.05)';
-        });
-        
-        card.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
-    });
-
     // Animate live indicator
     const liveIndicator = document.querySelector('.animate-ping');
     if (liveIndicator) {
@@ -677,15 +524,12 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     }
 
-    // Show success message on form elements
-    inputs.forEach(input => {
-        input.addEventListener('change', function() {
-            if (this.value && this.checkValidity()) {
-                this.style.borderColor = '#10b981';
-                setTimeout(() => {
-                    this.style.borderColor = '';
-                }, 1000);
-            }
+    // Parallax effect on scroll
+    window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.animate-gradient');
+        parallaxElements.forEach(element => {
+            element.style.transform = `translateY(${scrolled * 0.3}px)`;
         });
     });
 });

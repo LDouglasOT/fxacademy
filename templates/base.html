@@ -1,6 +1,6 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +12,9 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#005073',
-                        accent: '#ffcd05',
-                        secondary: '#ffffff',
+                        primary: '#f8f9fa',
+                        accent: '#0056b3',
+                        secondary: '#005073',
                     }
                 }
             }
@@ -28,28 +28,28 @@
         @keyframes gradient { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
     </style>
 </head>
-<body class="bg-primary text-white min-h-screen">
+<body class="bg-white text-gray-800 min-h-screen">
     <!-- Navigation -->
-    <nav class="bg-primary shadow-lg sticky top-0 z-50">
+    <nav class="bg-white shadow-lg sticky top-0 z-50 border-b border-gray-200">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16">
                 <div class="flex items-center">
-                    <a href="{% url 'homepage' %}" class="text-accent font-bold text-xl">Forex Academy & Signals</a>
+                    <a href="{% url 'homepage' %}" class="text-secondary font-bold text-xl">Forex Academy & Signals</a>
                 </div>
                 <div class="flex items-center space-x-4">
-                    <a href="{% url 'homepage' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Home</a>
-                    <a href="{% url 'pricing' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
-                    <a href="{% url 'signals_purchase' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Signals</a>
-                    <a href="{% url 'classes_enroll' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Classes</a>
+                    <a href="{% url 'homepage' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                    <a href="{% url 'pricing' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Pricing</a>
+                    <a href="{% url 'signals_purchase' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Signals</a>
+                    <a href="{% url 'classes_enroll' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Classes</a>
                     {% if user.is_authenticated %}
-                        <a href="{% url 'dashboard' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
-                        <a href="{% url 'logout' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Logout</a>
+                        <a href="{% url 'dashboard' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="{% url 'logout' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Logout</a>
                     {% else %}
-                        <a href="{% url 'login' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Login</a>
-                        <a href="{% url 'signup' %}" class="text-white hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
+                        <a href="{% url 'login' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Login</a>
+                        <a href="{% url 'signup' %}" class="text-gray-700 hover:text-accent px-3 py-2 rounded-md text-sm font-medium">Sign Up</a>
                     {% endif %}
-                    <button id="theme-toggle" class="text-white hover:text-accent p-2 rounded-md">
-                        <i class="fas fa-moon"></i>
+                    <button id="theme-toggle" class="text-gray-700 hover:text-accent p-2 rounded-md">
+                        <i class="fas fa-sun"></i>
                     </button>
                 </div>
             </div>
@@ -62,33 +62,33 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-primary border-t border-gray-700 mt-12">
+    <footer class="bg-gray-50 border-t border-gray-200 mt-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <h3 class="text-accent font-semibold mb-4">Elite Forex</h3>
-                    <p class="text-gray-300 text-sm">Professional forex signals and trading education platform.</p>
+                    <h3 class="text-secondary font-semibold mb-4">Elite Forex</h3>
+                    <p class="text-gray-600 text-sm">Professional forex signals and trading education platform.</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <h4 class="text-gray-800 font-semibold mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{% url 'homepage' %}" class="text-gray-300 hover:text-accent">Home</a></li>
-                        <li><a href="{% url 'pricing' %}" class="text-gray-300 hover:text-accent">Pricing</a></li>
-                        <li><a href="{% url 'signals_purchase' %}" class="text-gray-300 hover:text-accent">Signals</a></li>
-                        <li><a href="{% url 'classes_enroll' %}" class="text-gray-300 hover:text-accent">Classes</a></li>
+                        <li><a href="{% url 'homepage' %}" class="text-gray-600 hover:text-accent">Home</a></li>
+                        <li><a href="{% url 'pricing' %}" class="text-gray-600 hover:text-accent">Pricing</a></li>
+                        <li><a href="{% url 'signals_purchase' %}" class="text-gray-600 hover:text-accent">Signals</a></li>
+                        <li><a href="{% url 'classes_enroll' %}" class="text-gray-600 hover:text-accent">Classes</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-semibold mb-4">Follow Us</h4>
+                    <h4 class="text-gray-800 font-semibold mb-4">Follow Us</h4>
                     <div class="flex space-x-4">
-                        <a href="#" class="text-gray-300 hover:text-accent"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-accent"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-gray-300 hover:text-accent"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-accent"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-accent"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-gray-600 hover:text-accent"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
-                <p class="text-gray-400 text-xs">
+            <div class="border-t border-gray-200 mt-8 pt-8 text-center">
+                <p class="text-gray-500 text-xs">
                     <strong>Risk Disclaimer:</strong> Forex trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results. Please trade responsibly.
                 </p>
             </div>
@@ -99,3 +99,4 @@
     {% block extra_js %}{% endblock %}
 </body>
 </html>
+
