@@ -1,0 +1,16 @@
+[Unit]
+Description=Gunicorn daemon for fxAcademy Django app
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/path/to/your/project
+Environment="PATH=/path/to/your/venv/bin"
+EnvironmentFile=/path/to/your/project/.env
+ExecStart=/path/to/your/venv/bin/gunicorn --config gunicorn.conf.py fxAcademy.wsgi:application
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
